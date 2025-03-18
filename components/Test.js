@@ -1,22 +1,34 @@
-import { Text, View, StyleSheet, Image } from "react-native";
+import { Text, View, StyleSheet, Image, Button, TextInput } from "react-native";
 
 export default function Test(){
     return(
-    <View>
-        <View style={styles.container}>
-            <View style={styles.containerTextImage}>
-                <Text>KFDJSKFDSJKFSDJKFDSJFKDSJ</Text>
-                {/* IMAGEM NAO TA INDO */}
-                <Image style={{ width: 200, height: 200}} source={require('../assets/images.jpg')} />
-            </View>
-            <Text>Ai num sei :3</Text>
-            <View style={styles.containerTextImage2}>
-                <Text>dkfasjgffs</Text>
-                <Image style={{width: 200, height: 200}} source={require('../assets/jojo.jpg')} />
-            </View>
-            <Text style={styles.textoProLado}>alguma coisa</Text>
-        </View>
-    </View>
+
+      <View style={styles.container}>
+              <Text style={styles.texto}>JoJo's Bizarre Adventure é uma péssima obra japonesa!</Text>
+              <Image style={styles.imagem} source={require('../assets/images.jpg')} />
+              <Text style={styles.flexStartText}>Tipo, olha essa imagem aqui em cima, que bagulho podre slk</Text>
+          <View style={styles.containerImage2}>
+              <Image style={{width: 200, height: 200}} source={{uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRym01j0jv-Bq1vW8dBm6bz4KeEFvhMeO7sYA&s"}}/>
+              <Image style={{width: 200, height: 200}} source={{uri: 'https://m.media-amazon.com/images/I/81gP0g-WoJL._AC_UF894,1000_QL80_.jpg',}} />
+          </View>
+            <Text style={styles.creditos}>AUGUSTO O MELHOR</Text>
+
+
+            <TextInput
+            style={styles.txtinput}
+            placeholder="Nome"
+            />
+
+            <TextInput
+            style={styles.txtinput}
+            placeholder="Senha"
+            />
+                          
+              <Button
+              title="Enviar"
+              // color={'blue'}
+            />
+      </View>
     )
 }
 
@@ -24,19 +36,33 @@ const styles = StyleSheet.create({
     container: {
         flex: 1, 
         flexDirection: "column",
-        justifyContent: "center",
+        alignItems: "center",
+        justifyContent: "space-evenly",
+      },
+      texto: {
+        alignSelf: "flex-start",
+        padding: 50,
+      },
+      imagem: {
+        alignSelf: "flex-end",
+        width: 200,
+        height: 200,
+      },
+      containerImage2: {
+        flexDirection: "row-reverse",
+        justifyContent: "space-around",
         alignItems: "center",
       },
-      containerTextImage: {
-        flexDirection: "row",
-        margin: 50,
+      creditos: {
+        alignSelf: "center",
       },
-      containerTextImage2: {
-        flexDirection: "row-reverse",
-        margin: 50,
-      },
-      textoProLado: {
+      flexStartText: {
         alignSelf: "flex-end",
-        marginHorizontal: 20,
+        padding: 10,
+      },
+      txtinput: {
+        borderWidth: 1,
+        borderRadius: 8,
+        padding: 5,
       }
 })
