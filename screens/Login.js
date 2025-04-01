@@ -6,7 +6,6 @@ export default function Login(){
     return(
       <View style={styles.container}>
             <Text style={styles.creditos}>AUGUSTO O MELHOR</Text>
-
             <TextInput
             style={styles.txtinput}
             placeholder="Nome"
@@ -60,6 +59,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderRadius: 8,
         padding: 5,
+        margin: 6,
       }
 })
 
