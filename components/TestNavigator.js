@@ -1,6 +1,11 @@
 import { Text, View, StyleSheet, Image, Button, TextInput } from "react-native";
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-export default function Test(){
+
+
+function Test(){
+  const navigation = useNavigation(); //para poder usar o navigator
     return(
       <View style={styles.container}>
               <Text style={styles.texto}>JoJo's Bizarre Adventure é uma péssima obra japonesa!</Text>
@@ -12,7 +17,6 @@ export default function Test(){
           </View>
             <Text style={styles.creditos}>AUGUSTO O MELHOR</Text>
 
-
             <TextInput
             style={styles.txtinput}
             placeholder="Nome"
@@ -22,14 +26,56 @@ export default function Test(){
             style={styles.txtinput}
             placeholder="Senha"
             />
-                          
-              <Button
+
+            <Button
               title="Enviar"
-              // color={'blue'}
+              onPress={() =>
+                navigation.navigate("Home")
+              }
             />
       </View>
     )
 }
+
+//tela 2
+function Home({ navigation }) {
+  const handleLogout = () => {
+    navigation.navigate('Login');
+  };  
+
+  return (
+      <View style={styles.container}>
+        <Text style={styles.title}>HOME</Text>
+        <Button title="Logout" onPress={handleLogout} />
+      </View>
+  );
+};
+
+//cria o navigator
+const Stack = createStackNavigator();
+
+//nome de cada screen para a gente poder navegar, e ali dentro tem o componente (tela em si) a qual o nome se refere
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator 
+        initialRouteName="Login"
+        screenOptions={{ 
+          headerShown: false 
+        }}
+      >
+        <Stack.Screen 
+          name="Login" 
+          component={Test} 
+        />
+        <Stack.Screen 
+          name="Home" 
+          component={Home} 
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+};
 
 const styles = StyleSheet.create({
     container: {

@@ -7,7 +7,7 @@ import { Gallery, Artists } from './components/Profile';
 export default function App() {
   return (
     <View style={styles.container}> 
-      <Test/>
+      <TestNavigator/>
     </View>
   );
 }
