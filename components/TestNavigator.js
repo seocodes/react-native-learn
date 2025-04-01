@@ -1,5 +1,5 @@
 import { Text, View, StyleSheet, Image, Button, TextInput } from "react-native";
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';  //para os componentes/funções que são as screens a gente importa somente isso
 
 export function TestNavigator(){
   const navigation = useNavigation();  //para poder usar o navigator
@@ -29,7 +29,7 @@ export function TestNavigator(){
               title="Enviar"
               color="black"
               onPress={() =>
-                navigation.navigate("Home")
+                navigation.navigate("Home")  //navega p home
               }
             />
       </View>
