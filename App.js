@@ -15,11 +15,17 @@ export default function App() {
     const BottomTab = createBottomTabNavigator();
     return (
         <NavigationContainer>
-          <BottomTab.Navigator>
+          <BottomTab.Navigator initialRouteName='Login'
+          screenOptions={{
+            headerStyle: {backgroundColor: "#000"},
+            headerTintColor: "white",
+            tabBarActiveBackgroundColor: "#000",
+            tabBarInactiveBackgroundColor: "#484d50"
+          }}>
             <BottomTab.Screen name='Login' component={Login}
-            options={{tabBarIcon: () => <AntDesign name="login" size={24} color="black" />}}/>
+            options={{tabBarIcon: () => <AntDesign name="login" size={24} color="white" />}}/>
             <BottomTab.Screen name='Home' component={Home}
-            options={{tabBarIcon: ()=> <AntDesign name="home" size={24} color="black" />}}/>
+            options={{tabBarIcon: ()=> <AntDesign name="home" size={24} color="white" />}}/>
           </BottomTab.Navigator>
         </NavigationContainer>
       );
