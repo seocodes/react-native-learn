@@ -43,7 +43,6 @@ export function Home() {
   return (
       <View style={styles.container}>
         <Text style={styles.title}>HOME</Text>
-        <Button title="Logout" color="black" onPress={() => navigation.navigate('Login')} />
       </View>
   );
 };
