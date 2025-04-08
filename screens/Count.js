@@ -1,4 +1,4 @@
-import { Text, View, StyleSheet, Image, Button, TextInput, ScrollView } from "react-native";
+import { Text, View, StyleSheet, Image, TouchableOpacity, Button, TextInput, ScrollView } from "react-native";
 import { useState } from "react";
 
 
@@ -22,7 +22,9 @@ export default function Count() {
       <View style={styles.container}>
         <Text style={styles.textoHead}>MEU CONTADOR: {count}</Text>
         <View style={styles.buttons}>
-        <Button
+        <TouchableOpacity onPress={aumentar} style={styles.buttonView}>+</TouchableOpacity>
+        <TouchableOpacity onPress={diminuir} style={styles.buttonView}>-</TouchableOpacity>
+        {/* <Button
                 title="+"
                 color="orange"
                 onPress={aumentar}
@@ -31,7 +33,7 @@ export default function Count() {
                 title="-"
                 color="orange"
                 onPress={diminuir}
-                />      
+                />       */}
           </View>  
         </View>
   );
@@ -55,8 +57,12 @@ const styles = StyleSheet.create({
       buttons: {
         margin: 10,
         display: "flex",
-        width: 100,
-        justifyContent: "space-evenly",
         flexDirection: "row",
       },
+      buttonView: {
+        padding: 10,
+        margin: 10,
+        borderRadius: 4,
+        backgroundColor: "orange",
+      }
 })
