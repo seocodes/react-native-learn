@@ -1,11 +1,12 @@
 import { Text, View, StyleSheet, Image, Button, TextInput } from "react-native";
 import { useNavigation } from '@react-navigation/native';  //para os componentes/funções que são as screens a gente importa somente isso
+import { ImageBackground } from "react-native-web";
 
 export default function Login(){
   const navigation = useNavigation();  //para poder navegar entre paginas
     return(
       <View style={styles.container}>
-            <Text style={styles.creditos}>AUGUSTO O MELHOR</Text>
+            <Text style={styles.creditos}>VOLLEYBALL LEGENDS LEAGUE</Text>
             <TextInput
             style={styles.txtinput}
             placeholder="Nome"
@@ -50,6 +51,8 @@ const styles = StyleSheet.create({
       },
       creditos: {
         alignSelf: "center",
+        fontSize: 24,
+        fontWeight: 800,
       },
       flexStartText: {
         alignSelf: "flex-end",
