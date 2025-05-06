@@ -1,6 +1,7 @@
 import { Text, View, StyleSheet, Image, Button, TextInput, FlatList } from "react-native";
 import { useNavigation } from '@react-navigation/native';
 import { useState } from "react";
+import CardProduct from "../components/cardProduct";
 
 export default function Login(){
     const [produtos, setProdutos] = useState([
@@ -14,7 +15,6 @@ export default function Login(){
         {id: 8, nome: 'Mendigo', valor: 1000.00, img: 'https://blog.eporamor.org.br/wp-content/uploads/2024/03/pessoa-situacao-de-rua-ou-mendigo.jpg'},
         {id: 9, nome: 'Kakashi', valor: 20.00, img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoJdCulK0Qs-pV-jxRHO6C5AyHkJ42lGJ8Dg&s'},
         {id: 10, nome: 'Manga', valor: 5.00, img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSG7z1x7ks3A4Z5p9CvUb66dvHCnTgjaTjn0Q&s'},
-
     ]);
 
     function adicionarProduto(nome, valor){
@@ -42,12 +42,12 @@ export default function Login(){
             keyExtractor={item => item.id.toString()}
             renderItem={({item}) => (
             <View style={styles.container}>
-                <View style={styles.card}>
-                    <Image style={{width: 200, height: 200}} source={{uri: item.img }}/>
-                    <Text style={styles.minorTxt}>ID: {item.id}</Text>
-                    <Text style={styles.minorTxt}>{item.nome}</Text>
-                    <Text style={styles.minorTxt}>Valor: R${item.valor.toFixed(2)}</Text>
-                </View>
+                <CardProduct
+                id = {item.id}
+                nome = {item.nome}
+                valor = {item.valor}
+                img = {item.img}
+                />
             </View>
             )}
             />
@@ -62,28 +62,11 @@ const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "center", 
     },
-    card: {
-        backgroundColor: '#99ccFF',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        borderRadius: 8,
-        width: '70%',
-        margin: 15,
-    },
     texto: {
         alignSelf: "center",
         padding: 50,
         fontWeight: 'bold',
         fontSize: 26,
-        fontFamily: "Verdana",
-        color: 'black',
-      },
-      minorTxt: {
-        alignSelf: "center",
-        padding: 5,
-        fontWeight: 'bold',
-        fontSize: 18,
         fontFamily: "Verdana",
         color: 'black',
       },
