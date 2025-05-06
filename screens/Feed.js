@@ -2,7 +2,6 @@ import { Text, View, StyleSheet, FlatList, Image, Button, TextInput } from "reac
 import { useState } from "react";
 import CardProduct from "../components/cardProduct";
 
-
 export default function Feed() {
   const [produtos, setProdutos] = useState([
     {id: 1, nome: 'CREME', valor: 1.99, img: 'https://epocacosmeticos.vteximg.com.br/arquivos/ids/496104/Creme-Hidratante-Corporal-CeraVe---453gg--1-.jpg?v=637921253848200000'},
