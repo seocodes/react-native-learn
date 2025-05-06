@@ -41,11 +41,13 @@ export default function Login(){
             data={produtos}
             keyExtractor={item => item.id.toString()}
             renderItem={({item}) => (
-            <View style={styles.card}>
-                <Image style={{width: 200, height: 200}} source={{uri: item.img }}/>
-                <Text style={styles.minorTxt}>ID: {item.id}</Text>
-                <Text style={styles.minorTxt}>{item.nome}</Text>
-                <Text style={styles.minorTxt}>Valor: R${item.valor.toFixed(2)}</Text>
+            <View style={styles.container}>
+                <View style={styles.card}>
+                    <Image style={{width: 200, height: 200}} source={{uri: item.img }}/>
+                    <Text style={styles.minorTxt}>ID: {item.id}</Text>
+                    <Text style={styles.minorTxt}>{item.nome}</Text>
+                    <Text style={styles.minorTxt}>Valor: R${item.valor.toFixed(2)}</Text>
+                </View>
             </View>
             )}
             />
