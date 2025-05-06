@@ -1,12 +1,13 @@
 import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-// import { createDrawerNavigator } from '@react-navigation/drawer';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import Login from './screens/Login.js';  //screens/componentes que a gente vai navegar
 import Home from './screens/Home.js'
 import Feed from './screens/Feed.js'
 import Count from './screens/Count.js'
+import Produto from './screens/Produto.js'
 import 'react-native-gesture-handler';
 import AntDesign from '@expo/vector-icons/AntDesign';
 // import Profile from './components/Profile';
@@ -46,6 +47,7 @@ export default function App() {
             options={{tabBarIcon: () => <AntDesign name="sharealt" size={24} color="white" />}}/>
             <BottomTab.Screen name='Count' component={Count}
             options={{tabBarIcon: () => <AntDesign name="plus" size={24} color="white" />}}/>
+            <BottomTab.Screen name='Produto' component={Produto}/>
           </BottomTab.Navigator>
     );
   };
