@@ -46,5 +46,4 @@ const styles = StyleSheet.create({
         fontFamily: "Verdana",
         color: 'black',
       },
-    
 })
